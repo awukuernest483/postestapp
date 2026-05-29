@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import '../controllers/home_controller.dart';
@@ -118,7 +119,7 @@ class _OptionCard extends StatelessWidget {
                   children: [
                     if (option.image1.isNotEmpty)
                       Image.asset(option.image1, height: 25),
-                    Image.asset(option.image2, height: 35),
+                    SvgPicture.asset(option.image2, height: 50),
                   ],
                 ),
                 Text(

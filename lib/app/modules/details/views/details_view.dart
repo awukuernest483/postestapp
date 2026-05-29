@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import '../controllers/details_controller.dart';
@@ -19,7 +20,7 @@ class DetailsView extends GetView<DetailsController> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              if (option != null) Image.asset(option.image2, height: 80),
+              if (option != null) SvgPicture.asset(option.image2, height: 100),
               const SizedBox(height: 24),
               Text(
                 title,

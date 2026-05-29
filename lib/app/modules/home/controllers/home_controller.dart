@@ -22,36 +22,36 @@ class HomeController extends GetxController {
   final options = <PaymentOption>[
     const PaymentOption(
       image1: 'assets/images/momo.png',
-      image2: 'assets/images/momoicon.png',
+      image2: 'assets/icons/momo.svg',
       title: 'Mobile \nPayment',
     ),
     const PaymentOption(
       image1: 'assets/images/card.png',
-      image2: 'assets/images/cardicon.png',
+      image2: 'assets/icons/card.svg',
       title: 'Card \nPayment',
       color: '#1D3854',
     ),
     const PaymentOption(
       image1: '',
-      image2: 'assets/images/qr.png',
+      image2: 'assets/icons/qr.svg',
       title: 'Qr \nPayment',
       color: '#1D3854',
     ),
     const PaymentOption(
       image1: '',
-      image2: 'assets/images/terminal.png',
+      image2: 'assets/icons/terminal.svg',
       title: 'Terminal \nManagement',
       color: '#1D3854',
     ),
     const PaymentOption(
       image1: '',
-      image2: 'assets/images/kiosk.png',
+      image2: 'assets/icons/kiosk.svg',
       title: 'Toggle \nKiosk Mode',
       color: '#1D3854',
     ),
     const PaymentOption(
       image1: '',
-      image2: 'assets/images/history.png',
+      image2: 'assets/icons/history.svg',
       title: 'View \nHistory',
       bgImage: 'assets/images/historyimage.png',
     ),
