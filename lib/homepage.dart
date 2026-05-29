@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:postestapp/detailspage.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -77,12 +76,7 @@ class _HomepageState extends State<Homepage> {
                 itemCount: 6,
                 itemBuilder: (context, index) {
                   return GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Detailspage()),
-                      );
-                    },
+                    onTap: () {},
                     child: AspectRatio(
                       aspectRatio: 1.0,
                       child: Container(
