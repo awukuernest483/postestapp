@@ -41,13 +41,8 @@ class HomeView extends GetView<HomeController> {
                   mainAxisSpacing: _gridSpacing,
                   physics: const NeverScrollableScrollPhysics(),
                   itemCount: controller.options.length,
-                  itemBuilder: (context, index) {
-                    final option = controller.options[index];
-                    return OptionCard(
-                      option: option,
-                      onTap: () => controller.onOptionTap(option),
-                    );
-                  },
+                  itemBuilder: (context, index) =>
+                      OptionCard(option: controller.options[index]),
                 ),
               ),
               const _PoweredByFooter(),

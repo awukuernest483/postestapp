@@ -2,7 +2,6 @@ import 'package:get/get.dart';
 
 import '../../../core/constants/app_assets.dart';
 import '../../../data/models/payment_option.dart';
-import '../../../routes/app_routes.dart';
 import '../../../theme/app_colors.dart';
 
 class HomeController extends GetxController {
@@ -47,8 +46,4 @@ class HomeController extends GetxController {
       backgroundImage: AppAssets.historyBackground,
     ),
   ];
-
-  void onOptionTap(PaymentOption option) {
-    Get.toNamed(Routes.details, arguments: option);
-  }
 }

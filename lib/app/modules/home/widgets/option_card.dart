@@ -6,14 +6,9 @@ import '../../../theme/app_colors.dart';
 import '../../../theme/app_text_styles.dart';
 
 class OptionCard extends StatelessWidget {
-  const OptionCard({
-    super.key,
-    required this.option,
-    required this.onTap,
-  });
+  const OptionCard({super.key, required this.option});
 
   final PaymentOption option;
-  final VoidCallback onTap;
 
   static const _borderRadius = 20.0;
   static const _padding = 15.0;
@@ -22,22 +17,19 @@ class OptionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: AspectRatio(
-        aspectRatio: 1.0,
-        child: DecoratedBox(
-          decoration: _buildDecoration(),
-          child: Padding(
-            padding: const EdgeInsets.all(_padding),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                _IconRow(option: option),
-                Text(option.title, style: _titleStyle),
-              ],
-            ),
+    return AspectRatio(
+      aspectRatio: 1.0,
+      child: DecoratedBox(
+        decoration: _buildDecoration(),
+        child: Padding(
+          padding: const EdgeInsets.all(_padding),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              _IconRow(option: option),
+              Text(option.title, style: _titleStyle),
+            ],
           ),
         ),
       ),
