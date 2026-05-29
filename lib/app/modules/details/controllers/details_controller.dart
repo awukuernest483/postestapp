@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '../../home/controllers/home_controller.dart';
+import '../../../data/models/payment_option.dart';
 
 class DetailsController extends GetxController {
   late final PaymentOption? option;
@@ -11,4 +11,7 @@ class DetailsController extends GetxController {
     final args = Get.arguments;
     option = args is PaymentOption ? args : null;
   }
+
+  String get displayTitle =>
+      option?.title.replaceAll('\n', '').trim() ?? 'Details';
 }

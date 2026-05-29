@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
+import '../../../theme/app_text_styles.dart';
 import '../controllers/details_controller.dart';
 
 class DetailsView extends GetView<DetailsController> {
@@ -10,7 +11,7 @@ class DetailsView extends GetView<DetailsController> {
   @override
   Widget build(BuildContext context) {
     final option = controller.option;
-    final title = option?.title.replaceAll('\n', '').trim() ?? 'Details';
+    final title = controller.displayTitle;
 
     return Scaffold(
       appBar: AppBar(title: Text(title)),
@@ -20,19 +21,14 @@ class DetailsView extends GetView<DetailsController> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              if (option != null) SvgPicture.asset(option.image2, height: 100),
+              if (option != null) SvgPicture.asset(option.icon, height: 100),
               const SizedBox(height: 24),
-              Text(
-                title,
-                style: const TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+              Text(title, style: AppTextStyles.detailsTitle),
               const SizedBox(height: 12),
-              const Text(
+              Text(
                 'Details screen — coming soon.',
                 textAlign: TextAlign.center,
+                style: AppTextStyles.detailsBody,
               ),
             ],
           ),

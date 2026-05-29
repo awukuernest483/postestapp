@@ -1,63 +1,54 @@
 import 'package:get/get.dart';
 
-class PaymentOption {
-  const PaymentOption({
-    required this.image1,
-    required this.image2,
-    required this.title,
-    this.color,
-    this.bgImage,
-  });
-
-  final String image1;
-  final String image2;
-  final String title;
-  final String? color;
-  final String? bgImage;
-}
+import '../../../core/constants/app_assets.dart';
+import '../../../data/models/payment_option.dart';
+import '../../../routes/app_routes.dart';
+import '../../../theme/app_colors.dart';
 
 class HomeController extends GetxController {
-  final greeting = 'Good Morning'.obs;
+  String get greeting {
+    final hour = DateTime.now().hour;
+    if (hour < 12) return 'Good Morning';
+    if (hour < 17) return 'Good Afternoon';
+    return 'Good Evening';
+  }
 
-  final options = <PaymentOption>[
-    const PaymentOption(
-      image1: 'assets/icons/momo.svg',
-      image2: 'assets/icons/momoicon.svg',
+  final options = const <PaymentOption>[
+    PaymentOption(
       title: 'Mobile \nPayment',
+      icon: AppAssets.momoIcon,
+      sideIcon: AppAssets.momo,
+      gradient: AppColors.mobilePaymentGradient,
     ),
-    const PaymentOption(
-      image1: 'assets/icons/card.svg',
-      image2: 'assets/icons/cardicon.svg',
+    PaymentOption(
       title: 'Card \nPayment',
-      color: '#1D3854',
+      icon: AppAssets.cardIcon,
+      sideIcon: AppAssets.card,
+      color: AppColors.tileSurface,
     ),
-    const PaymentOption(
-      image1: '',
-      image2: 'assets/icons/qr.svg',
+    PaymentOption(
       title: 'Qr \nPayment',
-      color: '#1D3854',
+      icon: AppAssets.qr,
+      color: AppColors.tileSurface,
     ),
-    const PaymentOption(
-      image1: '',
-      image2: 'assets/icons/terminal.svg',
+    PaymentOption(
       title: 'Terminal \nManagement',
-      color: '#1D3854',
+      icon: AppAssets.terminal,
+      color: AppColors.tileSurface,
     ),
-    const PaymentOption(
-      image1: '',
-      image2: 'assets/icons/kiosk.svg',
+    PaymentOption(
       title: 'Toggle \nKiosk Mode',
-      color: '#1D3854',
+      icon: AppAssets.kiosk,
+      color: AppColors.tileSurface,
     ),
-    const PaymentOption(
-      image1: '',
-      image2: 'assets/icons/history.svg',
+    PaymentOption(
       title: 'View \nHistory',
-      bgImage: 'assets/images/historyimage.png',
+      icon: AppAssets.history,
+      backgroundImage: AppAssets.historyBackground,
     ),
   ];
 
   void onOptionTap(PaymentOption option) {
-    Get.toNamed('/details', arguments: option);
+    Get.toNamed(Routes.details, arguments: option);
   }
 }
