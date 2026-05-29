@@ -118,7 +118,7 @@ class _OptionCard extends StatelessWidget {
                       : MainAxisAlignment.end,
                   children: [
                     if (option.image1.isNotEmpty)
-                      Image.asset(option.image1, height: 25),
+                      SvgPicture.asset(option.image1, height: 30),
                     SvgPicture.asset(option.image2, height: 50),
                   ],
                 ),

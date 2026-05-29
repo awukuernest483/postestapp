@@ -21,13 +21,13 @@ class HomeController extends GetxController {
 
   final options = <PaymentOption>[
     const PaymentOption(
-      image1: 'assets/images/momo.png',
-      image2: 'assets/icons/momo.svg',
+      image1: 'assets/icons/momo.svg',
+      image2: 'assets/icons/momoicon.svg',
       title: 'Mobile \nPayment',
     ),
     const PaymentOption(
-      image1: 'assets/images/card.png',
-      image2: 'assets/icons/card.svg',
+      image1: 'assets/icons/card.svg',
+      image2: 'assets/icons/cardicon.svg',
       title: 'Card \nPayment',
       color: '#1D3854',
     ),
