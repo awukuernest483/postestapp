@@ -51,10 +51,10 @@ class OptionCard extends StatelessWidget {
   }
 
   TextStyle get _titleStyle => AppTextStyles.tileTitle.copyWith(
-        color: option.hasBackgroundImage
-            ? AppColors.tileTitleOnLight
-            : AppColors.tileTitleOnDark,
-      );
+    color: option.hasBackgroundImage
+        ? AppColors.tileTitleOnLight
+        : AppColors.tileTitleOnDark,
+  );
 }
 
 class _IconRow extends StatelessWidget {
@@ -70,8 +70,15 @@ class _IconRow extends StatelessWidget {
           : MainAxisAlignment.end,
       children: [
         if (option.hasSideIcon)
-          SvgPicture.asset(option.sideIcon!,
-              height: OptionCard._sideIconHeight),
+          option.sideIcon!.endsWith('.png')
+              ? Image.asset(
+                  option.sideIcon!,
+                  height: OptionCard._sideIconHeight,
+                )
+              : SvgPicture.asset(
+                  option.sideIcon!,
+                  height: OptionCard._sideIconHeight,
+                ),
         SvgPicture.asset(option.icon, height: OptionCard._iconHeight),
       ],
     );
